@@ -7,19 +7,43 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { AngularFireModule } from 'angularfire2';
+import { AddCustomerPage } from '../pages/add-customer/add-customer';
+import { TabsPage } from '../pages/tabs/tabs';
+import { CustomersPage } from '../pages/contact/contact';
+import { AboutPage } from '../pages/about/about';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyCTTgE4BZtYRpslwq74bQREmOXbrnHuqxE",
+  authDomain: "beforelate-63bd5.firebaseapp.com",
+  databaseURL: "https://beforelate-63bd5.firebaseio.com",
+  projectId: "beforelate-63bd5",
+  storageBucket: "beforelate-63bd5.appspot.com",
+  messagingSenderId: "133104423608"
+};
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    AboutPage,
+    CustomersPage,
+    HomePage,
+    TabsPage,
+    AddCustomerPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    AboutPage,
+    CustomersPage,
+    HomePage,
+    TabsPage,
+    AddCustomerPage
   ],
   providers: [
     StatusBar,
